@@ -28,11 +28,11 @@ router.post('/subscribe', asyncHandler(async (req, res) => {
         setTimeout(() => {
           resolve(
             needle.post(
-              `http://127.0.0.1:8000/api/subscribe`,
+              `https://newsletter-api-laravel.herokuapp.com/api/subscribe`,
               {
-                  name,
-                  email,
-                  is_subscribed: true
+                name,
+                email,
+                is_subscribed: true,
               },
               { json: true },
               async (err, res, body) => {
@@ -41,7 +41,7 @@ router.post('/subscribe', asyncHandler(async (req, res) => {
                 }
 
                 if (body.status === 201) {
-                    console.log(body.data)
+                  console.log(body.data);
                 }
               }
             )
@@ -83,9 +83,9 @@ router.patch(
         setTimeout(() => {
           resolve(
             needle.patch(
-              `http://127.0.0.1:8000/api/unsubscribe`,
+              `https://newsletter-api-laravel.herokuapp.com/api/nsubscribe`,
               {
-                email
+                email,
               },
               { json: true },
               async (err, res, body) => {
