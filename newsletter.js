@@ -83,7 +83,7 @@ router.patch(
         setTimeout(() => {
           resolve(
             needle.patch(
-              `https://newsletter-api-laravel.herokuapp.com/api/nsubscribe`,
+              `https://newsletter-api-laravel.herokuapp.com/api/unsubscribe`,
               {
                 email,
               },
